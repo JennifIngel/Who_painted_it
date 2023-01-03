@@ -10,7 +10,7 @@ from tensorflow import keras
 app = Flask(__name__)
 
 # Load the prediction model
-model = keras.models.load_model("../vgg16_with_data_aug.keras")
+model = keras.models.load_model("vgg16_with_data_aug.keras")
 
 
 @app.route("/", methods=['GET', 'POST'])
