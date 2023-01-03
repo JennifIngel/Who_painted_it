@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Schilder Voorspelling</title>
+    <link href="{{ url_for('static', filename='styles/main.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<img src="{{url_for('static', filename='styles/images/Vives_logo.png')}}">
+<div class="inhoud">
+  <h1>Wie is de schilder?</h1>
+  <p>Upload je schilderij en krijg een voorspelling.<br>De mogelijke schilders zijn: Picasso, Rubens of Van Gogh.</p>
+  <p>  Resultaat : {{ pred }}</p>
+  <form action="/predict" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*">
+    <input type="submit" value="Predict">
+  </form>
+
+</body>
+<footer>
+  <p>Jennifer Ingelbeen - 3AI</p>
+</footer>
+</html>
