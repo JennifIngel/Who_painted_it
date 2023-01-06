@@ -25,8 +25,7 @@ def predict():
 
     # Load the image into a PIL Image object
     image = Image.open(image_data).convert('RGB')
-    # image.show() => werkt
-    shape = (64, 64)
+    shape = (180, 180)
     image = image.resize(shape)
 
     # Convert the image to a numpy array
@@ -40,7 +39,7 @@ def predict():
     categories = ['Picasso','Rubens','VanGogh']
     predicted_label = categories[predicted_class]
 
-    # Return the prediction as a JSON response
+    # Return the prediction
     return render_template('website.html', pred=str(predicted_label))
 
 
